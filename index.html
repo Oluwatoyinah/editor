@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://editor.codecogs.com/assets/js/eqneditor.api.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://editor.codecogs.com/assets/css/eqneditor.css"
+    />
+    <script>
+      window.onload = function () {
+        toolbar = new EqEditor.Toolbar("toolbar");
+        textarea = new EqEditor.TextArea("latexInput");
+        textarea.addToolbar(toolbar, true);
+        mainOutput = new EqEditor.Output("output");
+        textarea.addOutput(mainOutput);
+        textarea.addHistoryMenu(new EqEditor.History("history"));
+      };
+
+      function testNow() {
+        console.log(document.getElementById("latexInput"), "val");
+      }
+    </script>
+  </head>
+  <body>
+    <div id="equation-editor">
+      <div id="history"></div>
+      <div id="toolbar"></div>
+      <div id="latexInput" autocorrect="off"></div>
+      <div id="equation-output">
+        <img id="output" />
+      </div>
+    </div>
+
+    <div>
+      <button onclick="testNow()">Test</button>
+    </div>
+  </body>
+</html>
